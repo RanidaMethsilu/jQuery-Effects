@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!-- jQuery library Google CDN-->
+
+</head>
+<body>
+
+    <p id="pid">Click on the paragraph.</p>
+    <script>
+        $('#pid').click(function(){
+            alert('You clicked on the paragraph!');
+        });
+    </script> 
+
+    <p class="pc">Enter or Leave mouse</p>
+    <script>
+        $('.pc').on({
+            mouseenter: function(){
+                $(this).css('background-color', 'yellow');
+            },
+            mouseleave: function(){
+                $(this).css('background-color', 'lightgray');
+            }
+        });
+    </script>
+
+    <br><br>
+    <u>Effects</u>
+
+    <p id="pr">This is a paragraph.</p>
+
+    <button id="hide">Hide</button>
+    <script>
+        $('#hide').click(function(){
+            $('#pr').hide('fast', function(){
+                alert('The paragraph is now hidden.');
+            });
+        })
+    </script>
+
+    <button id="show">Show</button>
+    <script>
+    $('#show').click(function(){
+        $('#pr').show('slow')
+    })
+    </script>
+
+    <button id="toggle">Toggle</button>
+    <script>
+    $('#toggle').click(function(){
+        $('#pr').toggle(1000)
+    })
+    </script>
+
+    <button id="fade">Fade</button>
+    <script>
+        $('#fade').click(function(){
+            $('#pr').fadeOut(1000).fadeIn(1000);
+        })
+    </script>
+
+    <button id="fadeto">FadeTo</button>
+    <script>
+        $('#fadeto').click(function(){
+            $('#pr').fadeTo(1000, 0.5);
+        })
+    </script>
+
+    <button id="reset">Reset</button>
+    <script>
+        $('#reset').click(function(){
+            $('#pr').fadeTo(1000, 1);
+        })
+    </script>
+
+    <br><br>
+
+    <button id="animate">Animation</button>
+    
+    <div class="box" style="width:100px; height:100px; background-color:lightblue; margin-top:20px;"></div>
+    <script>
+        $('#animate').click(function(){
+            $('.box').animate({
+                width: '200px',
+                height: '200px',
+                marginTop: '50px',
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
